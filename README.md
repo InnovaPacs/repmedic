@@ -51,5 +51,5 @@ El sitio es un único archivo HTML — se puede servir desde cualquier hosting e
 
 - **RepMedic** · Pachuca, Hidalgo, México
 - Tel: 771 150 8547 / 771 446 4323
-- repmedic@outlook.es · [repmedic.com.mx](https://www.repmedic.com.mx)
+- repmedic@outlook.es · [repmedic.com.mx](https://https://persist.lat/repmedic)
 - Software MED IQ desarrollado por [Persist Software Group](https://persist.lat/site)
