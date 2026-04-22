@@ -28,9 +28,41 @@ html{scroll-behavior:smooth}
   --green:#1dba72;
   --green-dim:rgba(29,186,114,0.1);
   --green-border:rgba(29,186,114,0.25);
+  --yellow:#e6a800;
+  --yellow-dim:rgba(255,180,0,.08);
+  --orange:#e07b2a;
+  --red:#e05252;
+  --red-dark:#c0392b;
+  --red-dim:rgba(220,60,60,.08);
+  --red-border:rgba(220,60,60,.3);
+  --red-border-strong:rgba(220,60,60,.5);
+  --teal:#16a085;
+  --nav-bg:rgba(12,13,16,0.9);
   --radius:6px;
   --radius-lg:10px;
   --radius-xl:14px;
+}
+
+[data-theme="light"]{
+  --bg:#ffffff;
+  --bg-2:#f5f6f8;
+  --bg-3:#eef0f4;
+  --surface:#ffffff;
+  --surface-2:#f0f2f6;
+  --ink:#1a1d24;
+  --ink-2:#5a6070;
+  --ink-3:#9299a8;
+  --border:rgba(0,0,0,0.07);
+  --border-strong:rgba(0,0,0,0.12);
+  --accent-dim:rgba(42,127,255,0.08);
+  --accent-border:rgba(42,127,255,0.22);
+  --green-dim:rgba(29,186,114,0.08);
+  --green-border:rgba(29,186,114,0.2);
+  --yellow-dim:rgba(255,180,0,0.1);
+  --red-dim:rgba(220,60,60,0.07);
+  --red-border:rgba(220,60,60,0.25);
+  --red-border-strong:rgba(220,60,60,0.4);
+  --nav-bg:rgba(255,255,255,0.92);
 }
 
 body{
@@ -45,7 +77,7 @@ body{
 /* ── NAV ── */
 nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(12,13,16,0.9);
+  background:var(--nav-bg);
   backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
   height:58px;
@@ -180,7 +212,7 @@ nav{
 .hc-rs{font-size:10px;color:var(--ink-3);}
 .hc-s{font-size:10px;padding:2px 7px;border-radius:99px;font-weight:500;white-space:nowrap;}
 .s-ok{background:var(--green-dim);color:var(--green);}
-.s-pend{background:rgba(255,180,0,.08);color:#e6a800;}
+.s-pend{background:var(--yellow-dim);color:var(--yellow);}
 .s-new{background:var(--accent-dim);color:var(--accent);}
 
 /* ── HERO CARD — Detalle de estudios ── */
@@ -224,13 +256,13 @@ nav{
   vertical-align:middle;
 }
 .hc-tbl tr:last-child td{border-bottom:none;}
-.mod{font-size:10px;font-weight:700;color:#e07b2a;}
+.mod{font-size:10px;font-weight:700;color:var(--orange);}
 .hc-acc{font-size:9px;color:var(--ink-3);}
 .hc-pac{font-size:10px;color:var(--ink);font-weight:500;}
 .hc-fecha{font-size:9px;color:var(--ink-3);white-space:nowrap;}
-.est-comp{background:rgba(29,186,114,.15);color:var(--green);padding:2px 5px;border-radius:3px;font-size:9px;font-weight:600;white-space:nowrap;}
-.est-int{background:rgba(230,168,0,.1);color:#e6a800;padding:2px 5px;border-radius:3px;font-size:9px;font-weight:600;white-space:nowrap;}
-.est-crea{background:rgba(42,127,255,.12);color:var(--accent);padding:2px 5px;border-radius:3px;font-size:9px;font-weight:600;white-space:nowrap;}
+.est-comp{background:var(--green-dim);color:var(--green);padding:2px 5px;border-radius:3px;font-size:9px;font-weight:600;white-space:nowrap;}
+.est-int{background:var(--yellow-dim);color:var(--yellow);padding:2px 5px;border-radius:3px;font-size:9px;font-weight:600;white-space:nowrap;}
+.est-crea{background:var(--accent-dim);color:var(--accent);padding:2px 5px;border-radius:3px;font-size:9px;font-weight:600;white-space:nowrap;}
 
 /* ── MSCREEN — Detalle de consultas médicas ── */
 .ms-consult-title{
@@ -271,10 +303,10 @@ nav{
   font-family:'Space Grotesk',sans-serif;
   font-size:11px;font-weight:700;color:var(--ink);
 }
-.ms-pmod{font-size:9px;color:#e07b2a;font-weight:700;margin:0 4px;}
+.ms-pmod{font-size:9px;color:var(--orange);font-weight:700;margin:0 4px;}
 .ms-urgencia{
   font-size:8px;padding:1px 5px;
-  background:rgba(220,60,60,.15);color:#e05252;
+  background:var(--red-dim);color:var(--red);
   border-radius:3px;font-weight:700;letter-spacing:.03em;
 }
 .ms-pdetail{font-size:10px;color:var(--ink-3);margin-top:1px;line-height:1.3;}
@@ -291,9 +323,9 @@ nav{
   color:#fff;
 }
 .ms-act-blue{background:var(--accent);}
-.ms-act-orange{background:#e07b2a;}
-.ms-act-red{background:#c0392b;}
-.ms-act-teal{background:#16a085;}
+.ms-act-orange{background:var(--orange);}
+.ms-act-red{background:var(--red-dark);}
+.ms-act-teal{background:var(--teal);}
 
 /* ── STRIP ── */
 .strip{
@@ -346,10 +378,10 @@ nav{
   border-radius:var(--radius-lg);
   padding:18px 20px;
   display:flex;gap:14px;align-items:flex-start;
-  border-left:2px solid rgba(220,60,60,0.5);
+  border-left:2px solid var(--red-border-strong);
   transition:border-color .2s;
 }
-.pain-card:hover{border-left-color:rgba(220,60,60,0.9);}
+.pain-card:hover{border-left-color:var(--red);}
 .pain-card h4{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;}
 .pain-card p{font-size:13px;color:var(--ink-2);line-height:1.55;}
 .pi{font-size:18px;margin-top:1px;flex-shrink:0;}
@@ -573,13 +605,13 @@ nav{
   background:var(--green-dim);border:1px solid var(--green-border);color:var(--green);
 }
 .form-msg.error{
-  background:rgba(220,60,60,.08);border:1px solid rgba(220,60,60,.3);color:#e05252;
+  background:var(--red-dim);border:1px solid var(--red-border);color:var(--red);
 }
 .fg.invalid input,.fg.invalid select,.fg.invalid textarea{
-  border-color:rgba(220,60,60,.6);
+  border-color:var(--red-border);
 }
 .fg .field-error{
-  display:none;font-size:11px;color:#e05252;margin-top:3px;
+  display:none;font-size:11px;color:var(--red);margin-top:3px;
 }
 .fg.invalid .field-error{display:block;}
 .btn-submit:disabled{opacity:.5;cursor:not-allowed;}
@@ -604,6 +636,19 @@ footer{
 .footer-links a:hover{color:var(--ink-2);}
 .footer-copy{font-size:12px;color:var(--ink-3);}
 
+/* ── THEME TOGGLE ── */
+.theme-toggle{
+  background:var(--surface);border:1px solid var(--border-strong);
+  border-radius:var(--radius);width:32px;height:32px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:15px;transition:border-color .15s;flex-shrink:0;
+}
+.theme-toggle:hover{border-color:var(--ink-2);}
+[data-theme="light"] .theme-icon-light{display:none;}
+[data-theme="light"] .theme-icon-dark{display:inline;}
+html:not([data-theme="light"]) .theme-icon-dark{display:none;}
+html:not([data-theme="light"]) .theme-icon-light{display:inline;}
+
 /* ── ANIMATIONS ── */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
 .reveal.visible{opacity:1;transform:none;}
@@ -626,6 +671,7 @@ footer{
   .footer-links{flex-wrap:wrap;justify-content:center;}
 }
 </style>
+<script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;var t=s||(d?'dark':'light');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
 </head>
 <body>
 
@@ -648,6 +694,10 @@ footer{
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#contacto" class="nav-cta">Solicitar cotización</a></li>
   </ul>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+    <span class="theme-icon-dark">🌙</span>
+    <span class="theme-icon-light">☀️</span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -657,12 +707,12 @@ footer{
     <div class="hero-badge">Proveedor de equipo médico · México</div>
     <h1>Equipo médico,<br>redes y software.<br><em>Todo en uno.</em></h1>
     <p class="hero-sub">
-      Vendemos, instalamos y mantenemos el equipo que tu clínica necesita — y lo integramos con
+      Vendemos, reparamos, instalamos y mantenemos el equipo que tu clínica necesita — y lo integramos con
       <strong>MED IQ</strong>, nuestro sistema RIS/PACS propio. Un solo proveedor, un solo contrato.
     </p>
     <div class="hero-actions">
       <a href="#contacto" class="btn btn-accent">Solicitar cotización</a>
-      <a href="#mediq" class="btn btn-ghost">Ver MED IQ →</a>
+      <a href="https://persist.lat/med-iq" target="_blank" class="btn btn-ghost">Ver MED IQ →</a>
     </div>
   </div>
   <div class="hero-card">
@@ -823,11 +873,6 @@ footer{
       <h3>Redes e infraestructura</h3>
       <p>Diseño e instalación de redes hospitalarias. Segmentación para DICOM, servidores PACS y redes administrativas.</p>
     </div>
-    <div class="svc reveal">
-      <span class="svc-icon">🖥️</span>
-      <h3>ERP hospitalario y cómputo</h3>
-      <p>Equipos de cómputo, servidores y ERP hospitalario. Infraestructura completa para tu operación administrativa.</p>
-    </div>
     <div class="svc feat reveal">
       <div class="svc-tag">★ Solo RepMedic lo incluye</div>
       <span class="svc-icon">💻</span>
@@ -980,7 +1025,7 @@ footer{
   <div class="cinfo reveal">
     <div class="eyebrow">Contáctanos</div>
     <h2 class="sh">¿Listo para modernizar tu clínica?</h2>
-    <p class="sp">Cuéntanos tu situación y preparamos una propuesta sin costo. También puedes agendar una demo de MED IQ directamente.</p>
+    <p class="sp">Cuéntanos tu situación y preparamos una propuesta de venta o repación de equipo. También puedes agendar una demo de MED IQ directamente.</p>
     <div style="margin-top:28px;">
       <div class="cdet">
         <div class="cdet-icon">📞</div>
@@ -1059,7 +1104,7 @@ footer{
       </div>
       <div class="fg">
         <label for="f-mensaje">Mensaje (opcional)</label>
-        <textarea id="f-mensaje" name="mensaje" placeholder="Cuéntanos: qué equipo tienes, cuántos estudios haces al mes, si ya usas algún software..."></textarea>
+        <textarea id="f-mensaje" name="mensaje" placeholder="Cuéntanos: qué equipo tienes, cuántos estudios haces al mes, si ya usas algún software, si necesitas adquirir nuevos equipos o reparación..."></textarea>
       </div>
       <button type="submit" class="btn-submit" id="submitBtn">Enviar solicitud →</button>
       <div class="form-msg" id="formSuccess">¡Solicitud enviada! Nos pondremos en contacto contigo muy pronto.</div>
@@ -1139,6 +1184,18 @@ requiredFields.forEach(({ id, fg }) => {
   el.addEventListener('change', () => {
     if (el.value.trim()) fgEl.classList.remove('invalid');
   });
+});
+
+/* Theme toggle */
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if (isLight) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
 });
 
 form.addEventListener('submit', async (e) => {
